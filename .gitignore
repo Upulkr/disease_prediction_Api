@@ -1,0 +1,42 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables and credentials
+.env
+*.env
+config.py
+instance/
+
+# Flask-specific
+instance/
+*.log
+*.sqlite3
+*.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Bytecode and compiled files
+*.pyc
+*.pyo
+
+# Pip and dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# MacOS and system files
+.DS_Store
+*.bak
+
