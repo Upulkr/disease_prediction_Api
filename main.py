@@ -17,9 +17,17 @@ models = {
         "message": {1: "You might have diabetes. Please consult a doctor.", 0: "You are not likely to have diabetes. Stay healthy!"}
     },
     "breast_cancer": {
-        "path": "models/breast_cancer_model.sav",
-        "features": ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal"],
-        "message": {1: "You might have breast cancer. Please consult a doctor.", 0: "No signs of breast cancer detected."}
+        "path": "models/breast_cancer_pediction_final_model.sav",
+        "features": ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
+       'mean smoothness', 'mean compactness', 'mean concavity',
+       'mean concave points', 'mean symmetry', 'mean fractal dimension',
+       'radius error', 'texture error', 'perimeter error', 'area error',
+       'smoothness error', 'compactness error', 'concavity error',
+       'concave points error', 'symmetry error', 'fractal dimension error',
+       'worst radius', 'worst texture', 'worst perimeter', 'worst area',
+       'worst smoothness', 'worst compactness', 'worst concavity',
+       'worst concave points', 'worst symmetry', 'worst fractal dimension'],
+        "message": {0: "You might have breast cancer. Please consult a doctor.", 1: "No signs of breast cancer detected."}
     },
     "heart_disease": {
         "path": "models/heart_pediction_final_model.sav",
