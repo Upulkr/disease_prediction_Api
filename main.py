@@ -18,12 +18,12 @@ models = {
     },
     "breast_cancer": {
         "path": "models/breast_cancer_model.sav",
-        "features": ["radius_mean", "texture_mean", "perimeter_mean", "area_mean", "smoothness_mean"],
+        "features": ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal"],
         "message": {1: "You might have breast cancer. Please consult a doctor.", 0: "No signs of breast cancer detected."}
     },
     "heart_disease": {
-        "path": "models/heart_disease_model.sav",
-        "features": ["age", "sex", "chest_pain", "blood_pressure", "cholesterol", "heart_rate"],
+        "path": "models/heart_pediction_final_model.sav",
+        "features": ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal"],
         "message": {1: "You might have heart disease. Please consult a doctor.", 0: "No signs of heart disease detected."}
     }
 }
@@ -63,6 +63,7 @@ def predict(disease):
             return jsonify({"error": "No JSON data received"}), 400
 
         required_keys = model_info["features"]
+        print("Required keys:", required_keys)
 
         # Check for missing keys
         for key in required_keys:
