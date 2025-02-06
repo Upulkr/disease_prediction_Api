@@ -18,15 +18,15 @@ models = {
     },
     "breast_cancer": {
         "path": "models/breast_cancer_pediction_final_model.sav",
-        "features": ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
-       'mean smoothness', 'mean compactness', 'mean concavity',
-       'mean concave points', 'mean symmetry', 'mean fractal dimension',
-       'radius error', 'texture error', 'perimeter error', 'area error',
-       'smoothness error', 'compactness error', 'concavity error',
-       'concave points error', 'symmetry error', 'fractal dimension error',
-       'worst radius', 'worst texture', 'worst perimeter', 'worst area',
-       'worst smoothness', 'worst compactness', 'worst concavity',
-       'worst concave points', 'worst symmetry', 'worst fractal dimension'],
+        "features": ['meanradius', 'meantexture', 'meanperimeter', 'meanarea',
+       'meansmoothness', 'meancompactness', 'meanconcavity',
+       'meanconcavepoints', 'meansymmetry', 'meanfractaldimension',
+       'radiuserror', 'textureerror', 'perimetererror', 'areaerror',
+       'smoothnesserror', 'compactnesserror', 'concavityerror',
+       'concavepointserror', 'symmetryerror', 'fractaldimensionerror',
+       'worstradius', 'worsttexture', 'worstperimeter', 'worstarea',
+       'worstsmoothness', 'worstcompactness', 'worstconcavity',
+       'worstconcavepoints', 'worstsymmetry', 'worstfractaldimension'],
         "message": {0: "You might have breast cancer. Please consult a doctor.", 1: "No signs of breast cancer detected."}
     },
     "heart_disease": {
@@ -83,14 +83,15 @@ def predict(disease):
         input_array = np.array([features]).astype(float)
         prediction = model.predict(input_array)[0]
 
+        print("Prediction:", prediction)
         # Get the message for this disease
         message = model_info["message"].get(int(prediction), "No message available.")
 
-        return jsonify({"prediction": str(prediction), "message": message}), 200
+        return jsonify({"prediction": str(prediction), "message": message,"disease":disease,}), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500  # Sending 500 status for errors
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=5000)
