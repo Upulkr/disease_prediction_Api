@@ -1,4 +1,3 @@
-﻿# disease_prediction_Api
 
 # Disease Prediction API
 
@@ -19,5 +18,6 @@ This repository contains Python Flask microservices for disease prediction as pa
 - scikit-learn (machine learning models)
 - numpy (numerical computations)
 - Gunicorn (production WSGI server)
+
 
 
